@@ -1,13 +1,15 @@
 pipeline {
-    agent any
+    agent { docker { image 'python:3.5.1' } }
     environment { 
         KEY = ''
     }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                echo 'Building..'
-                KEY=\$(python3 {WORKSPACE}/test.py)
+                sh 'python --version'
+                sh 'echo Building..'
+                sh 'KEY=\$(python3 {WORKSPACE}/test.py)'
+                sh 'echo $KEY'
             }
         }
     }
