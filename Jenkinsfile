@@ -8,7 +8,7 @@ pipeline {
             steps {
                 sh("python --version")
                 sh("echo Building..")
-                sh("echo ${KEY}")
+                sh("echo ${env.KEY}")
             }
         }
     }
