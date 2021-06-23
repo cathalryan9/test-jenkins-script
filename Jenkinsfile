@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             environment { 
-                KEY=sh(script: "python3 test.py", returnStdOut: true)
+                KEY=sh(script: "python3 test.py", returnStdout: true)
             }
             steps {
                 sh("python --version")
