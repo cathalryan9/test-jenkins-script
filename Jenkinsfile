@@ -1,14 +1,13 @@
 pipeline {
     agent any
-    environment { 
-        KEY=sh("python3 test.py")
-    }
     stages {
         stage('build') {
             steps {
+                withEnv(["KEY=sh 'python3 test.py'"]
                 sh("python --version")
                 sh("echo Building..")
-                sh("echo ${env.KEY}")
+                echo '${env.KEY}'
+                sh("echo $KEY")
             }
         }
     }
