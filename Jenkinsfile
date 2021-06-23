@@ -9,7 +9,6 @@ pipeline {
                 python3 test.py
                 set +x
                 python3 test.py
-                echo $KEY
                 """
             }
         }
