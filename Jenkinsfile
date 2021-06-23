@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-        KEY=\$(python3 test.py)
+        KEY=sh \$(python3 test.py)
     }
     stages {
         stage('build') {
